@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=3 uid="uid://bei08e6551fy"]
+
+[ext_resource type="Script" path="res://scenes/hud.gd" id="1_ebsrw"]
+[ext_resource type="StyleBox" uid="uid://ea1603msoppp" path="res://scenes/hud.tres" id="1_qquop"]
+[ext_resource type="Texture2D" uid="uid://c1j2aaeytwxrg" path="res://assets/MonedaD.png" id="1_xpdrp"]
+[ext_resource type="FontFile" uid="uid://67f7x0etak5w" path="res://assets/retro_gaming/Retro Gaming.ttf" id="2_5slxi"]
+[ext_resource type="StyleBox" uid="uid://b7tc15e3iw24m" path="res://scenes/pause_button.tres" id="4_n7nft"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_ebsrw")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_right = 200.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("1_qquop")
+
+[node name="CoinSprite" type="Sprite2D" parent="Panel"]
+position = Vector2(40, 25)
+scale = Vector2(2, 2)
+texture = ExtResource("1_xpdrp")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="CoinLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16
+anchor_top = 0.5
+anchor_right = 0.16
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 70.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_5slxi")
+theme_override_font_sizes/font_size = 25
+text = "× 0"
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -20.0
+offset_right = 50.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_5slxi")
+theme_override_font_sizes/font_size = 25
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PauseButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.95
+anchor_top = 0.5
+anchor_right = 0.95
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -18.0
+offset_bottom = 18.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_pressed_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_hover_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_focus_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_fonts/font = ExtResource("2_5slxi")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("4_n7nft")
+theme_override_styles/hover = ExtResource("4_n7nft")
+theme_override_styles/pressed = ExtResource("4_n7nft")
+theme_override_styles/focus = ExtResource("4_n7nft")
+text = "Pause"
+
+[connection signal="pressed" from="Panel/PauseButton" to="." method="_on_pause_button_pressed"]

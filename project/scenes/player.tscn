@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://bege1x5152n2g"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_d128t"]
+[ext_resource type="Texture2D" uid="uid://dongwwbthfdgv" path="res://assets/Character.png" id="1_fkcpn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wadwt"]
+atlas = ExtResource("1_fkcpn")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5r5x"]
+atlas = ExtResource("1_fkcpn")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnp2f"]
+atlas = ExtResource("1_fkcpn")
+region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_clsbu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wadwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5r5x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnp2f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmn2i"]
+size = Vector2(12, 16)
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 15
+script = ExtResource("1_d128t")
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+z_index = 5
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_clsbu")
+
+[node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cmn2i")
+
+[node name="StartTimer" type="Timer" parent="."]
+process_mode = 2
+wait_time = 3.0
+one_shot = true
+
+[node name="PlayerArea" type="Area2D" parent="."]
+collision_mask = 6
+
+[node name="PlayerCollisionObstacle" type="CollisionShape2D" parent="PlayerArea"]
+shape = SubResource("RectangleShape2D_cmn2i")
+
+[connection signal="timeout" from="StartTimer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="PlayerArea" to="." method="_on_player_area_body_entered"]

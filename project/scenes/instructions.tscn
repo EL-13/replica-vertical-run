@@ -1,0 +1,179 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7mvb2k6kk2yq"]
+
+[ext_resource type="StyleBox" uid="uid://fi6qh2tqr0ee" path="res://assets/game_over_menu.tres" id="1_3u68h"]
+[ext_resource type="Script" path="res://scenes/instructions.gd" id="1_h6cs8"]
+[ext_resource type="FontFile" uid="uid://67f7x0etak5w" path="res://assets/retro_gaming/Retro Gaming.ttf" id="2_h4u1l"]
+[ext_resource type="StyleBox" path="res://assets/restart_button.tres" id="3_yxs5d"]
+[ext_resource type="Texture2D" uid="uid://c1j2aaeytwxrg" path="res://assets/MonedaD.png" id="4_c3nss"]
+[ext_resource type="Texture2D" uid="uid://vcdi7etxrdgn" path="res://assets/Basic Grass Biom things 1.png" id="5_2jy2r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ifxae"]
+bg_color = Color(0.12549, 0.12549, 0.12549, 0.345098)
+
+[node name="Instructions" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_h6cs8")
+
+[node name="ShadePanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -300.0
+offset_right = 200.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ifxae")
+
+[node name="InstructionsPanel" type="Panel" parent="ShadePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -150.0
+offset_right = 175.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_3u68h")
+
+[node name="MoveLabel" type="Label" parent="ShadePanel/InstructionsPanel" groups=["Instructions_P1"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.05
+anchor_right = 0.5
+anchor_bottom = 0.05
+offset_left = -165.0
+offset_right = 165.0
+offset_bottom = 200.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_h4u1l")
+theme_override_font_sizes/font_size = 20
+text = "Swipe left and right
+
+OR
+
+Press left and right arrow keys"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CollectLabel" type="Label" parent="ShadePanel/InstructionsPanel" groups=["Instructions_P2"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.2
+anchor_right = 0.1
+anchor_bottom = 0.2
+offset_right = 120.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_h4u1l")
+theme_override_font_sizes/font_size = 25
+text = "Collect"
+vertical_alignment = 1
+
+[node name="AvoidLabel" type="Label" parent="ShadePanel/InstructionsPanel" groups=["Instructions_P2"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.45
+anchor_right = 0.1
+anchor_bottom = 0.45
+offset_right = 120.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("2_h4u1l")
+theme_override_font_sizes/font_size = 25
+text = "Avoid"
+vertical_alignment = 1
+
+[node name="NextButton" type="Button" parent="ShadePanel/InstructionsPanel" groups=["Instructions_P1"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.9
+anchor_right = 0.5
+anchor_bottom = 0.9
+offset_left = -50.0
+offset_top = -40.0
+offset_right = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_h4u1l")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = ExtResource("3_yxs5d")
+theme_override_styles/hover = ExtResource("3_yxs5d")
+theme_override_styles/pressed = ExtResource("3_yxs5d")
+theme_override_styles/focus = ExtResource("3_yxs5d")
+text = "NEXT"
+
+[node name="StartGameButton" type="Button" parent="ShadePanel/InstructionsPanel" groups=["Instructions_P2"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.9
+anchor_right = 0.5
+anchor_bottom = 0.9
+offset_left = -100.0
+offset_top = -40.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_h4u1l")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = ExtResource("3_yxs5d")
+theme_override_styles/hover = ExtResource("3_yxs5d")
+theme_override_styles/pressed = ExtResource("3_yxs5d")
+theme_override_styles/focus = ExtResource("3_yxs5d")
+text = "START GAME"
+
+[node name="CoinSprite" type="Sprite2D" parent="ShadePanel/InstructionsPanel" groups=["Instructions_P2"]]
+position = Vector2(290, 76)
+scale = Vector2(2, 2)
+texture = ExtResource("4_c3nss")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="RockSprite" type="Sprite2D" parent="ShadePanel/InstructionsPanel" groups=["Instructions_P2"]]
+position = Vector2(206, 170)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_2jy2r")
+region_enabled = true
+region_rect = Rect2(80, 64, 16, 16)
+
+[node name="LogSprite" type="Sprite2D" parent="ShadePanel/InstructionsPanel" groups=["Instructions_P2"]]
+position = Vector2(260, 170)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_2jy2r")
+region_enabled = true
+region_rect = Rect2(80, 32, 16, 16)
+
+[node name="PurpleMushroomSprite" type="Sprite2D" parent="ShadePanel/InstructionsPanel" groups=["Instructions_P2"]]
+position = Vector2(233, 145)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_2jy2r")
+region_enabled = true
+region_rect = Rect2(128, 0, 16, 16)
+
+[node name="RedMushroomSprite" type="Sprite2D" parent="ShadePanel/InstructionsPanel" groups=["Instructions_P2"]]
+position = Vector2(287, 145)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_2jy2r")
+region_enabled = true
+region_rect = Rect2(80, 0, 16, 16)
+
+[node name="TreeSprite" type="Sprite2D" parent="ShadePanel/InstructionsPanel" groups=["Instructions_P2"]]
+position = Vector2(314, 170)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_2jy2r")
+region_enabled = true
+region_rect = Rect2(64, 32, 16, 16)
+
+[connection signal="pressed" from="ShadePanel/InstructionsPanel/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="ShadePanel/InstructionsPanel/StartGameButton" to="." method="_on_start_game_button_pressed"]

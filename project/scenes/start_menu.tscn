@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://blw3j62ey225g"]
+
+[ext_resource type="Script" path="res://scenes/start_menu.gd" id="1_5f0i6"]
+[ext_resource type="FontFile" uid="uid://67f7x0etak5w" path="res://assets/retro_gaming/Retro Gaming.ttf" id="2_io5tv"]
+[ext_resource type="AudioStream" uid="uid://c3t56hkx34h2n" path="res://assets/countdown_audio.mp3" id="3_pqg18"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ydmw0"]
+bg_color = Color(0.12549, 0.12549, 0.12549, 0.345098)
+
+[node name="StartMenu" type="CanvasLayer"]
+script = ExtResource("1_5f0i6")
+
+[node name="ShadePanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -300.0
+offset_right = 200.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ydmw0")
+
+[node name="StartLabel" type="Label" parent="ShadePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.5
+offset_top = -65.5
+offset_right = 38.5
+offset_bottom = 65.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_io5tv")
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CountdownAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_pqg18")

@@ -1,0 +1,264 @@
+[gd_scene load_steps=6 format=3 uid="uid://cu0d2p6voxnyw"]
+
+[ext_resource type="Script" path="res://scenes/credits_menu.gd" id="1_3bv2e"]
+[ext_resource type="StyleBox" uid="uid://byhx5upucj480" path="res://scenes/shade_panel.tres" id="1_bymq4"]
+[ext_resource type="StyleBox" uid="uid://fi6qh2tqr0ee" path="res://assets/game_over_menu.tres" id="2_jktd4"]
+[ext_resource type="FontFile" uid="uid://67f7x0etak5w" path="res://assets/retro_gaming/Retro Gaming.ttf" id="3_p60ii"]
+[ext_resource type="StyleBox" uid="uid://dnxwl6fj0xxnx" path="res://scenes/exit_menu_buttons.tres" id="4_tx2oc"]
+
+[node name="CreditsMenu" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_3bv2e")
+
+[node name="ShadePanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -300.0
+offset_right = 200.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_bymq4")
+
+[node name="CreditsPanel" type="Panel" parent="ShadePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -225.0
+offset_right = 150.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_jktd4")
+
+[node name="CreditsLabel" type="Label" parent="ShadePanel/CreditsPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.08
+anchor_right = 0.5
+anchor_bottom = 0.08
+offset_left = -82.0
+offset_right = 82.0
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_p60ii")
+theme_override_font_sizes/font_size = 35
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TilesetLabel" type="Label" parent="ShadePanel/CreditsPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.21
+anchor_right = 0.5
+anchor_bottom = 0.21
+offset_left = -129.5
+offset_right = 129.5
+offset_bottom = 29.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.901961, 0.654902, 1)
+theme_override_fonts/font = ExtResource("3_p60ii")
+theme_override_font_sizes/font_size = 18
+text = "Tileset & Character:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoinLabel" type="Label" parent="ShadePanel/CreditsPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.37
+anchor_right = 0.5
+anchor_bottom = 0.37
+offset_left = -65.5
+offset_right = 65.5
+offset_bottom = 26.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.901961, 0.654902, 1)
+theme_override_fonts/font = ExtResource("3_p60ii")
+theme_override_font_sizes/font_size = 18
+text = "Coin Sprite:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FontLabel" type="Label" parent="ShadePanel/CreditsPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.54
+anchor_right = 0.5
+anchor_bottom = 0.54
+offset_left = -29.5
+offset_right = 29.5
+offset_bottom = 26.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.901961, 0.654902, 1)
+theme_override_fonts/font = ExtResource("3_p60ii")
+theme_override_font_sizes/font_size = 18
+text = "Font:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioLabel" type="Label" parent="ShadePanel/CreditsPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.71
+anchor_right = 0.5
+anchor_bottom = 0.71
+offset_left = -29.5
+offset_right = 29.5
+offset_bottom = 26.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.901961, 0.654902, 1)
+theme_override_fonts/font = ExtResource("3_p60ii")
+theme_override_font_sizes/font_size = 18
+text = "Sound Effects:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TilesetLink" type="LinkButton" parent="ShadePanel/CreditsPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.27
+anchor_right = 0.5
+anchor_bottom = 0.27
+offset_left = -52.5
+offset_right = 52.5
+offset_bottom = 20.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_pressed_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_hover_color = Color(1, 0.901961, 0.654902, 1)
+theme_override_colors/font_focus_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_fonts/font = ExtResource("3_p60ii")
+theme_override_font_sizes/font_size = 15
+text = "Cup Nooble"
+underline = 2
+uri = "https://cupnooble.itch.io/sprout-lands-asset-pack"
+
+[node name="CoinLink" type="LinkButton" parent="ShadePanel/CreditsPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.44
+anchor_right = 0.5
+anchor_bottom = 0.44
+offset_left = -63.0
+offset_right = 63.0
+offset_bottom = 20.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_pressed_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_hover_color = Color(1, 0.901961, 0.654902, 1)
+theme_override_colors/font_focus_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_fonts/font = ExtResource("3_p60ii")
+theme_override_font_sizes/font_size = 15
+text = "La Red Games"
+underline = 2
+uri = "https://laredgames.itch.io/gems-coins-free"
+
+[node name="FontLink" type="LinkButton" parent="ShadePanel/CreditsPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.61
+anchor_right = 0.5
+anchor_bottom = 0.61
+offset_left = -48.5
+offset_right = 48.5
+offset_bottom = 20.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_pressed_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_hover_color = Color(1, 0.901961, 0.654902, 1)
+theme_override_colors/font_focus_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_fonts/font = ExtResource("3_p60ii")
+theme_override_font_sizes/font_size = 15
+text = "Daymarius"
+underline = 2
+uri = "https://www.dafont.com/retro-gaming.font"
+
+[node name="AudioLink" type="LinkButton" parent="ShadePanel/CreditsPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.78
+anchor_right = 0.5
+anchor_bottom = 0.78
+offset_left = -40.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_pressed_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_hover_color = Color(1, 0.901961, 0.654902, 1)
+theme_override_colors/font_focus_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_fonts/font = ExtResource("3_p60ii")
+theme_override_font_sizes/font_size = 15
+text = "Pixabay"
+underline = 2
+uri = "https://pixabay.com/"
+
+[node name="CloseButton" type="Button" parent="ShadePanel/CreditsPanel"]
+process_mode = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.86
+anchor_right = 0.5
+anchor_bottom = 0.86
+offset_left = -50.0
+offset_right = 50.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_pressed_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_hover_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_focus_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_fonts/font = ExtResource("3_p60ii")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("4_tx2oc")
+theme_override_styles/hover = ExtResource("4_tx2oc")
+theme_override_styles/pressed = ExtResource("4_tx2oc")
+theme_override_styles/focus = ExtResource("4_tx2oc")
+text = "Close"
+
+[node name="ResumeButton" type="Button" parent="ShadePanel/CreditsPanel"]
+process_mode = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.86
+anchor_right = 0.5
+anchor_bottom = 0.86
+offset_left = -60.0
+offset_right = 60.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_pressed_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_hover_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_focus_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_fonts/font = ExtResource("3_p60ii")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("4_tx2oc")
+theme_override_styles/hover = ExtResource("4_tx2oc")
+theme_override_styles/pressed = ExtResource("4_tx2oc")
+theme_override_styles/focus = ExtResource("4_tx2oc")
+text = "Resume"
+
+[connection signal="pressed" from="ShadePanel/CreditsPanel/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="ShadePanel/CreditsPanel/ResumeButton" to="." method="_on_resume_button_pressed"]

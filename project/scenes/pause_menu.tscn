@@ -1,0 +1,105 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvwhofse7xxr7"]
+
+[ext_resource type="StyleBox" uid="uid://byhx5upucj480" path="res://scenes/shade_panel.tres" id="1_cg0ik"]
+[ext_resource type="StyleBox" uid="uid://fi6qh2tqr0ee" path="res://assets/game_over_menu.tres" id="1_qvc73"]
+[ext_resource type="Script" path="res://scenes/pause_menu.gd" id="1_uuph5"]
+[ext_resource type="FontFile" uid="uid://67f7x0etak5w" path="res://assets/retro_gaming/Retro Gaming.ttf" id="3_3fuv4"]
+[ext_resource type="StyleBox" path="res://assets/restart_button.tres" id="4_bt28t"]
+[ext_resource type="StyleBox" uid="uid://dnxwl6fj0xxnx" path="res://scenes/exit_menu_buttons.tres" id="5_6q663"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_uuph5")
+
+[node name="ShadePanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -300.0
+offset_right = 200.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_cg0ik")
+
+[node name="PausePanel" type="Panel" parent="ShadePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -125.0
+offset_right = 150.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_qvc73")
+
+[node name="PauseLabel" type="Label" parent="ShadePanel/PausePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.2
+anchor_right = 0.5
+anchor_bottom = 0.2
+offset_left = -81.0
+offset_right = 81.0
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_3fuv4")
+theme_override_font_sizes/font_size = 35
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="ShadePanel/PausePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.7
+anchor_right = 0.5
+anchor_bottom = 0.7
+offset_left = -65.0
+offset_top = -40.0
+offset_right = 65.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_3fuv4")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = ExtResource("4_bt28t")
+theme_override_styles/hover = ExtResource("4_bt28t")
+theme_override_styles/pressed = ExtResource("4_bt28t")
+theme_override_styles/focus = ExtResource("4_bt28t")
+text = "RESUME"
+
+[node name="CreditsButton" type="Button" parent="ShadePanel/PausePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.9
+anchor_right = 0.5
+anchor_bottom = 0.9
+offset_left = -65.0
+offset_top = -40.0
+offset_right = 65.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_pressed_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_hover_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_focus_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_fonts/font = ExtResource("3_3fuv4")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("5_6q663")
+theme_override_styles/hover = ExtResource("5_6q663")
+theme_override_styles/pressed = ExtResource("5_6q663")
+theme_override_styles/focus = ExtResource("5_6q663")
+text = "Credits"
+
+[connection signal="pressed" from="ShadePanel/PausePanel/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="ShadePanel/PausePanel/CreditsButton" to="." method="_on_credits_button_pressed"]

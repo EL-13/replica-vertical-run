@@ -1,0 +1,60 @@
+[gd_scene load_steps=11 format=3 uid="uid://tyew5u32mmul"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_i4t33"]
+[ext_resource type="PackedScene" uid="uid://bege1x5152n2g" path="res://scenes/player.tscn" id="2_tt2bp"]
+[ext_resource type="PackedScene" uid="uid://bei08e6551fy" path="res://scenes/hud.tscn" id="3_b3ww0"]
+[ext_resource type="PackedScene" uid="uid://c7mvb2k6kk2yq" path="res://scenes/instructions.tscn" id="4_qvesm"]
+[ext_resource type="PackedScene" uid="uid://blw3j62ey225g" path="res://scenes/start_menu.tscn" id="5_bncob"]
+[ext_resource type="PackedScene" uid="uid://dvwhofse7xxr7" path="res://scenes/pause_menu.tscn" id="6_jen1j"]
+[ext_resource type="PackedScene" uid="uid://cu0d2p6voxnyw" path="res://scenes/credits_menu.tscn" id="7_jnoyq"]
+[ext_resource type="PackedScene" uid="uid://xguymfbq8ea1" path="res://scenes/game_over_menu.tscn" id="8_lw50k"]
+[ext_resource type="PackedScene" uid="uid://djkqr6i1fmg53" path="res://scenes/exit_menu.tscn" id="9_hv3fe"]
+[ext_resource type="AudioStream" uid="uid://cq6ksjb7nit7b" path="res://assets/coin_audio.mp3" id="10_pg7ty"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_i4t33")
+
+[node name="Player" parent="." instance=ExtResource("2_tt2bp")]
+position = Vector2(200, 680)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+process_mode = 3
+
+[node name="HUD" parent="." instance=ExtResource("3_b3ww0")]
+
+[node name="Instructions" parent="." groups=["Scale2"] instance=ExtResource("4_qvesm")]
+
+[node name="StartMenu" parent="." groups=["Scale2"] instance=ExtResource("5_bncob")]
+process_mode = 3
+visible = false
+
+[node name="PauseMenu" parent="." groups=["Scale2"] instance=ExtResource("6_jen1j")]
+visible = false
+
+[node name="CreditsMenu" parent="." groups=["Scale2"] instance=ExtResource("7_jnoyq")]
+visible = false
+
+[node name="GameOverMenu" parent="." groups=["Scale2"] instance=ExtResource("8_lw50k")]
+process_mode = 2
+visible = false
+
+[node name="ExitMenu" parent="." groups=["Scale2"] instance=ExtResource("9_hv3fe")]
+process_mode = 2
+visible = false
+
+[node name="CoinAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_pg7ty")
+
+[connection signal="hit_obstacle" from="Player" to="." method="_on_player_hit_obstacle"]
+[connection signal="start_game" from="Player" to="." method="_on_player_start_game"]
+[connection signal="pause" from="HUD" to="." method="_on_hud_pause"]
+[connection signal="start_game" from="Instructions" to="." method="_on_instructions_start_game"]
+[connection signal="credits" from="PauseMenu" to="." method="_on_pause_menu_credits"]
+[connection signal="resume" from="PauseMenu" to="." method="_on_pause_menu_resume"]
+[connection signal="close" from="CreditsMenu" to="." method="_on_credits_menu_close"]
+[connection signal="resume" from="CreditsMenu" to="." method="_on_credits_menu_resume"]
+[connection signal="credits" from="GameOverMenu" to="." method="_on_game_over_menu_credits"]
+[connection signal="instructions" from="GameOverMenu" to="." method="_on_game_over_menu_instructions"]
+[connection signal="restart" from="GameOverMenu" to="." method="_on_game_over_menu_restart"]
+[connection signal="cancel" from="ExitMenu" to="." method="_on_exit_menu_cancel"]
+[connection signal="exit" from="ExitMenu" to="." method="_on_exit_menu_exit"]

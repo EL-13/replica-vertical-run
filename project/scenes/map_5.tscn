@@ -1,0 +1,91 @@
+[gd_scene load_steps=4 format=3 uid="uid://csrgygw5b0w1u"]
+
+[ext_resource type="Script" path="res://scenes/map_5.gd" id="1_2w7n3"]
+[ext_resource type="TileSet" uid="uid://ygo75h3ri542" path="res://assets/map.tres" id="1_oncof"]
+[ext_resource type="PackedScene" uid="uid://c6ckoqcgcot11" path="res://scenes/coin.tscn" id="2_ljva3"]
+
+[node name="Map5" type="Node2D" groups=["Maps"]]
+script = ExtResource("1_2w7n3")
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(5, 5)
+tile_set = ExtResource("1_oncof")
+format = 2
+layer_0/name = "Floor"
+layer_0/tile_data = PackedInt32Array(0, 327680, 0, 65536, 327680, 0, 131072, 65536, 0, 196608, 65536, 0, 262144, 65536, 0, 327680, 196608, 1, 393216, 65536, 0, 1, 196608, 0, 65537, 0, 0, 131073, 0, 1, 196609, 327680, 1, 262145, 262144, 0, 327681, 196608, 1, 393217, 0, 1, 2, 65536, 0, 65538, 196608, 1, 131074, 65536, 0, 196610, 327680, 0, 262146, 65536, 0, 327682, 131072, 1, 393218, 65536, 0, 3, 327680, 1, 65539, 0, 1, 131075, 131072, 1, 196611, 65536, 0, 262147, 196608, 1, 327683, 65536, 0, 393219, 0, 1, 4, 196608, 0, 65540, 65536, 0, 131076, 65536, 0, 196612, 65536, 0, 262148, 65536, 0, 327684, 327680, 0, 393220, 0, 1, 458752, 65536, 0, 524288, 0, 1, 589824, 65536, 0, 655360, 65536, 0, 720896, 65536, 0, 786432, 65536, 0, 851968, 196608, 0, 917504, 65536, 0, 983040, 0, 1, 1048576, 65536, 0, 1114112, 131072, 1, 1179648, 196608, 1, 1245184, 65536, 0, 1310720, 327680, 1, 1376256, 65536, 0, 1441792, 65536, 0, 1507328, 131072, 1, 458753, 65536, 0, 524289, 0, 0, 589825, 327680, 0, 655361, 65536, 0, 720897, 65536, 0, 786433, 0, 0, 851969, 196608, 1, 917505, 65536, 0, 983041, 65536, 0, 1048577, 65536, 0, 1114113, 131072, 1, 1179649, 131072, 1, 1245185, 262144, 0, 1310721, 327680, 1, 1376257, 0, 0, 1441793, 0, 1, 1507329, 262144, 0, 458754, 262144, 0, 524290, 65536, 0, 589826, 327680, 1, 655362, 0, 0, 720898, 327680, 0, 786434, 65536, 0, 851970, 0, 1, 917506, 0, 1, 983042, 0, 0, 1048578, 327680, 0, 1114114, 196608, 0, 1179650, 196608, 1, 1245186, 65536, 0, 1310722, 65536, 0, 1376258, 65536, 0, 1441794, 65536, 0, 1507330, 65536, 0, 458755, 0, 0, 524291, 131072, 0, 589827, 327680, 1, 655363, 327680, 1, 720899, 65536, 0, 786435, 196608, 1, 851971, 262144, 0, 917507, 65536, 0, 983043, 327680, 1, 1048579, 0, 0, 1114115, 65536, 0, 1179651, 131072, 1, 1245187, 0, 1, 1310723, 196608, 0, 1376259, 327680, 1, 1441795, 65536, 0, 1507331, 0, 0, 458756, 65536, 0, 524292, 65536, 0, 589828, 131072, 1, 655364, 65536, 0, 720900, 65536, 0, 786436, 65536, 0, 851972, 65536, 0, 917508, 327680, 1, 983044, 196608, 0, 1048580, 65536, 0, 1114116, 65536, 0, 1179652, 327680, 0, 1245188, 327680, 0, 1310724, 65536, 0, 1376260, 65536, 0, 1441796, 65536, 0, 1507332, 65536, 0, 1572864, 0, 1, 1638400, 327680, 0, 1703936, 65536, 0, 1769472, 65536, 0, 1835008, 65536, 0, 1900544, 65536, 0, 1572865, 0, 1, 1638401, 262144, 0, 1703937, 65536, 0, 1769473, 327680, 1, 1835009, 131072, 1, 1900545, 0, 1, 1572866, 327680, 0, 1638402, 0, 1, 1703938, 0, 0, 1769474, 196608, 1, 1835010, 196608, 1, 1900546, 65536, 0, 1572867, 0, 0, 1638403, 327680, 1, 1703939, 0, 1, 1769475, 196608, 1, 1835011, 131072, 1, 1900547, 327680, 1, 1572868, 65536, 0, 1638404, 65536, 0, 1703940, 65536, 0, 1769476, 65536, 0, 1835012, 65536, 0, 1900548, 196608, 1)
+layer_1/name = "Fence"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(1900544, 1, 1, 1835008, 1, 1, 1769472, 1, 1, 1703936, 1, 1, 1638400, 1, 1, 1572864, 1, 1, 1507328, 1, 1, 1441792, 1, 1, 1376256, 1, 1, 1310720, 1, 1, 1245184, 1, 1, 1179648, 1, 1, 1114112, 1, 1, 1048576, 1, 1, 983040, 1, 1, 983044, 1, 1, 1048580, 1, 1, 1114116, 1, 1, 1179652, 1, 1, 1245188, 1, 1, 1310724, 1, 1, 1376260, 1, 1, 1441796, 1, 1, 1507332, 1, 1, 1572868, 1, 1, 1638404, 1, 1, 1703940, 1, 1, 1769476, 1, 1, 1835012, 1, 1, 1900548, 1, 1, 917508, 1, 1, 851972, 1, 1, 786436, 1, 1, 720900, 1, 1, 655364, 1, 1, 589828, 1, 1, 524292, 1, 1, 458756, 1, 1, 393220, 1, 1, 327684, 1, 1, 262148, 1, 1, 196612, 1, 1, 131076, 1, 1, 65540, 1, 1, 4, 1, 1, 0, 1, 1, 65536, 1, 1, 131072, 1, 1, 196608, 1, 1, 262144, 1, 1, 327680, 1, 1, 393216, 1, 1, 458752, 1, 1, 524288, 1, 1, 589824, 1, 1, 655360, 1, 1, 720896, 1, 1, 786432, 1, 1, 851968, 1, 1, 917504, 1, 1)
+layer_2/name = "Obstacle"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
+layer_2/tile_data = PackedInt32Array(1638402, 327682, 2, 1441793, 262146, 2, 1441795, 524290, 1, 1048578, 524290, 0, 786435, 393218, 0, 786433, 327682, 4, 393218, 262146, 2, 2, 327682, 2)
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("2_ljva3")]
+position = Vector2(120, 2280)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("2_ljva3")]
+position = Vector2(280, 2360)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("2_ljva3")]
+position = Vector2(280, 2200)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("2_ljva3")]
+position = Vector2(200, 1880)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("2_ljva3")]
+position = Vector2(120, 2120)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("2_ljva3")]
+position = Vector2(280, 2040)
+
+[node name="Coin7" parent="Coins" instance=ExtResource("2_ljva3")]
+position = Vector2(120, 1480)
+
+[node name="Coin8" parent="Coins" instance=ExtResource("2_ljva3")]
+position = Vector2(120, 1400)
+
+[node name="Coin9" parent="Coins" instance=ExtResource("2_ljva3")]
+position = Vector2(200, 1800)
+
+[node name="Coin10" parent="Coins" instance=ExtResource("2_ljva3")]
+position = Vector2(200, 1720)
+
+[node name="Coin11" parent="Coins" instance=ExtResource("2_ljva3")]
+position = Vector2(120, 1320)
+
+[node name="Coin12" parent="Coins" instance=ExtResource("2_ljva3")]
+position = Vector2(200, 1160)
+
+[node name="Coin13" parent="Coins" instance=ExtResource("2_ljva3")]
+position = Vector2(200, 1080)
+
+[node name="Coin14" parent="Coins" instance=ExtResource("2_ljva3")]
+position = Vector2(200, 1000)
+
+[node name="Coin15" parent="Coins" instance=ExtResource("2_ljva3")]
+position = Vector2(120, 680)
+
+[node name="Coin16" parent="Coins" instance=ExtResource("2_ljva3")]
+position = Vector2(120, 600)
+
+[node name="Coin17" parent="Coins" instance=ExtResource("2_ljva3")]
+position = Vector2(120, 520)
+
+[node name="Coin18" parent="Coins" instance=ExtResource("2_ljva3")]
+position = Vector2(280, 280)
+
+[node name="Coin19" parent="Coins" instance=ExtResource("2_ljva3")]
+position = Vector2(280, 200)
+
+[node name="Coin20" parent="Coins" instance=ExtResource("2_ljva3")]
+position = Vector2(280, 120)

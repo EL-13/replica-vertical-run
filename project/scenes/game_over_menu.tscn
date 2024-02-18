@@ -1,0 +1,160 @@
+[gd_scene load_steps=7 format=3 uid="uid://xguymfbq8ea1"]
+
+[ext_resource type="StyleBox" uid="uid://fi6qh2tqr0ee" path="res://assets/game_over_menu.tres" id="1_2oeko"]
+[ext_resource type="Script" path="res://scenes/game_over_menu.gd" id="1_ysk2m"]
+[ext_resource type="StyleBox" uid="uid://byhx5upucj480" path="res://scenes/shade_panel.tres" id="2_883rv"]
+[ext_resource type="FontFile" uid="uid://67f7x0etak5w" path="res://assets/retro_gaming/Retro Gaming.ttf" id="2_svgsm"]
+[ext_resource type="StyleBox" path="res://assets/restart_button.tres" id="3_w8f7a"]
+[ext_resource type="StyleBox" uid="uid://dnxwl6fj0xxnx" path="res://scenes/exit_menu_buttons.tres" id="5_ysrqm"]
+
+[node name="GameOverMenu" type="CanvasLayer"]
+script = ExtResource("1_ysk2m")
+
+[node name="ShadePanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -300.0
+offset_right = 200.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_883rv")
+
+[node name="GameOverPanel" type="Panel" parent="ShadePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -175.0
+offset_right = 150.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_2oeko")
+
+[node name="GameOverLabel" type="Label" parent="ShadePanel/GameOverPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.1
+offset_left = -132.5
+offset_right = 132.5
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_svgsm")
+theme_override_font_sizes/font_size = 35
+text = "GAME OVER!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="ShadePanel/GameOverPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.25
+anchor_right = 0.5
+anchor_bottom = 0.25
+offset_left = -53.5
+offset_right = 53.5
+offset_bottom = 29.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_svgsm")
+theme_override_font_sizes/font_size = 20
+text = "SCORE: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoinLabel" type="Label" parent="ShadePanel/GameOverPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.33
+anchor_right = 0.5
+anchor_bottom = 0.33
+offset_left = -124.0
+offset_right = 124.0
+offset_bottom = 29.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_svgsm")
+theme_override_font_sizes/font_size = 20
+text = "COINS COLLECTED: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="ShadePanel/GameOverPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_right = 80.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_svgsm")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = ExtResource("3_w8f7a")
+theme_override_styles/hover = ExtResource("3_w8f7a")
+theme_override_styles/pressed = ExtResource("3_w8f7a")
+theme_override_styles/focus = ExtResource("3_w8f7a")
+text = "RESTART"
+
+[node name="InstructionsButton" type="Button" parent="ShadePanel/GameOverPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.65
+anchor_right = 0.5
+anchor_bottom = 0.65
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_pressed_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_hover_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_focus_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_fonts/font = ExtResource("2_svgsm")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("5_ysrqm")
+theme_override_styles/hover = ExtResource("5_ysrqm")
+theme_override_styles/pressed = ExtResource("5_ysrqm")
+theme_override_styles/focus = ExtResource("5_ysrqm")
+text = "Instructions"
+
+[node name="CreditsButton" type="Button" parent="ShadePanel/GameOverPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.8
+anchor_right = 0.5
+anchor_bottom = 0.8
+offset_left = -80.0
+offset_right = 80.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_pressed_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_hover_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_colors/font_focus_color = Color(0.376471, 0.219608, 0.0313726, 1)
+theme_override_fonts/font = ExtResource("2_svgsm")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("5_ysrqm")
+theme_override_styles/hover = ExtResource("5_ysrqm")
+theme_override_styles/pressed = ExtResource("5_ysrqm")
+theme_override_styles/focus = ExtResource("5_ysrqm")
+text = "Credits"
+
+[connection signal="pressed" from="ShadePanel/GameOverPanel/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="ShadePanel/GameOverPanel/InstructionsButton" to="." method="_on_instructions_button_pressed"]
+[connection signal="pressed" from="ShadePanel/GameOverPanel/CreditsButton" to="." method="_on_credits_button_pressed"]
