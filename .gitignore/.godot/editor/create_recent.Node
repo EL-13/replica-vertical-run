@@ -1,0 +1,17 @@
+AudioStreamPlayer2D
+Button
+LinkButton
+Label
+Panel
+CanvasLayer
+Timer
+Sprite2D
+Node2D
+TileMap
+CanvasGroup
+CollisionPolygon2D
+Area2D
+Camera2D
+AnimatedSprite2D
+CollisionShape2D
+CharacterBody2D

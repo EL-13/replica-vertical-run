@@ -1,0 +1,6 @@
+res://scenes/main.tscn
+res://assets/map.tres
+res://assets/game_over_menu.tres
+res://scenes/hud.tres
+res://scenes/pause_button.tres
+res://scenes/exit_menu_buttons.tres
