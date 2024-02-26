@@ -12,3 +12,7 @@ Source codes and assets for the game Vertical Run. The game can be played here: 
 | - |deploy.yml*|https://gist.github.com/Heidi-Negrete/23f544d20f070d69ea1fce8df91d6732|
 
 &ast; File name in this repositories. Github Workflow configuration used to deploy game to Github Pages.
+
+----
+Feel free to contact me directly if you have any feedbacks or questions regarding the game.
+If you are interested in my other projects, please follow this link to my portfolio blog: https://el-13.github.io/portfolio/
